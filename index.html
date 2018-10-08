@@ -181,8 +181,9 @@
             function getSlicesArray(jsonObject) {
                 const arr = [];
                 jsonObject.map(function (value) {
+                    const qty = value.SLICES || 0;
                     if (!value.DISABLED) {
-                        for (let i = 0; i < value.SLICES; i++) {
+                        for (let i = 0; i <= value.SLICES; i++) {
                             arr.push(value.NAME);
                         }
                     }
